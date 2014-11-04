@@ -12,16 +12,18 @@ Enrich your blog posts with automatically added, relevant tags.
 
 == Description ==
 
-The Fossura Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voilà!
+The Fossura Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voila!
 
 Choose to consider all possible tags equally, or to give precedence to the names of people, places and things.
 
 The following languages are currently supported:
-* English
-* Afrikaans 
+
+*	English
+*	Afrikaans 
 
 == Installation ==
-1. The painless way
+1. The painless way.
+
 Go to "Plugins" > "Add"
 Search for "fossura tag miner"
 Click "Install now"
@@ -30,6 +32,7 @@ Activate the plugin
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
 2. The manual way
+
 Download the plugin .zip file by clicking the red download button at the top right of this page
 Go to "Plugins" > "Add"
 Select "Upload"
@@ -38,7 +41,7 @@ Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
-== FAQ ==
+== Frequently Asked Questions ==
 = So how do I get the tags? =
 Simply publish your post. The plugin will take care of the rest as part of the publication process.
 
