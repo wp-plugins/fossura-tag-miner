@@ -24,20 +24,20 @@ The following languages are currently supported:
 == Installation ==
 1. The painless way.
 
-Go to "Plugins" > "Add"
-Search for "fossura tag miner"
-Click "Install now"
-Activate the plugin
+*	Go to "Plugins" > "Add"
+*	Search for "fossura tag miner"
+*	Click "Install now"
+*	Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
 2. The manual way
 
-Download the plugin .zip file by clicking the red download button at the top right of this page
-Go to "Plugins" > "Add"
-Select "Upload"
-Browse to and upload the plugin .zip file
-Activate the plugin
+*	Download the plugin .zip file by clicking the red download button at the top right of this page
+*	Go to "Plugins" > "Add"
+*	Select "Upload"
+*	Browse to and upload the plugin .zip file
+*	Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
