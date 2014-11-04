@@ -12,13 +12,13 @@ Enrich your blog posts with automatically added, relevant tags.
 
 == Description ==
 
-The Fossura Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voilà!
+The Fossura Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voila!
 
 Choose to consider all possible tags equally, or to give precedence to the names of people, places and things.
 
 The following languages are currently supported:
-* English
-* Afrikaans 
+	* English
+	* Afrikaans 
 
 == Installation ==
 1. The painless way
