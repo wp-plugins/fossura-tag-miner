@@ -22,7 +22,7 @@ The following languages are currently supported:
 *	Afrikaans 
 
 == Installation ==
-1. The painless way.
+= The painless way =
 
 *	Go to "Plugins" > "Add"
 *	Search for "fossura tag miner"
@@ -31,7 +31,7 @@ The following languages are currently supported:
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
-2. The manual way
+= The manual way =
 
 *	Download the plugin .zip file by clicking the red download button at the top right of this page
 *	Go to "Plugins" > "Add"
