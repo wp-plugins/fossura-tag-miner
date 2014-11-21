@@ -3,7 +3,7 @@ Contributors: fossura
 Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans
 Requires at least: 2.3.0
 Tested up to: 4.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LAUXPCX6AL66C&lc=ZA&item_name=Fossura%20Computational%20Linguistics&item_number=fossura&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
@@ -55,3 +55,6 @@ We'd love to hear your idea! Please rate and review the plugin, and be sure to m
 
 = 1.0 =
 Hello, word!
+
+= 1.0.1 =
+New feature: add tags when saving draft

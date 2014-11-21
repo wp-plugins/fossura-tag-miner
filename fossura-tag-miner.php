@@ -6,7 +6,7 @@
  * Plugin Name: Fossura Tag Miner
  * Plugin URI: http://fossura.co.za
  * Description: Automatically add relevant tags to your blog posts..
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Fossura Computational Linguistics
  * Author URI: http://fossura.co.za
  * License: GPL2
@@ -31,10 +31,34 @@
 add_action( 'transition_post_status', 'fossura_set_tags', 10, 3 );
 
 function fossura_set_tags( $new_status, $old_status, $post ) {
-	if ('publish' == $new_status && 'publish' != $old_status ) {
-		  	$content = $post->post_title . "\n" . $post->post_content;
-		  	$tags = fossura_get_keywords($content);
-		 	$id = $post->ID;
-			wp_set_post_tags( $id, $tags, true );
+		
+	$trigger = get_option('fossura_tags_trigger');
+
+	if (NULL == $trigger) {
+		update_option('fossura_tags_trigger', 'publish');
+	}	
+	
+	if ($trigger == 'publish') {
+		if ('publish' == $new_status && 'publish' != $old_status ) {
+			  	$content = $post->post_title . "\n" . $post->post_content;
+			  	$tags = fossura_get_keywords($content);
+			 	$id = $post->ID;
+				wp_set_post_tags( $id, $tags, true );
+		}
+	}
+	
+	elseif($trigger =='draft') {
+		if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+			return;
+		}
+		else {
+		//if ('draft' == $new_status && 'draft' == $old_status ) {
+			if ('draft' == $new_status && 'draft' == $old_status ) {
+			  	$content = $post->post_title . "\n" . $post->post_content;
+			  	$tags = fossura_get_keywords($content);
+			 	$id = $post->ID;
+				wp_set_post_tags( $id, $tags, true );
+			}
+		}
 	}
 }

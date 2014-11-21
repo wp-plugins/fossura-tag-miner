@@ -1,5 +1,5 @@
 <?php
-	function fossura_get_keywords( $document , $post ) {
+	function fossura_get_keywords( $document ) {
 		
 		if ( is_null( get_option('fossura_tags_mode') ) ) {
 			$mode = 'classic'; 

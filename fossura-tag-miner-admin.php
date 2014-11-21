@@ -17,17 +17,27 @@
 					<tr valign="top">
 						<th><label>Extraction algorithm</label></th>
 						<td class="fossura_config_td">
-							<?php create_radio_button('fossura_tags_mode', 'classic', '', 'Classic <span class="description">(treat all entities equally)</span>');?>
-							<?php create_radio_button('fossura_tags_mode', 'nominal', '', 'Nominal <span class="description">(give precedence to the names of people, places and things)</span>');?>
+							<?php create_radio_button('fossura_tags_mode', 'classic', 'Classic <span class="description">(treat all entities equally)</span>');?>
+							<?php create_radio_button('fossura_tags_mode', 'nominal', 'Nominal <span class="description">(give precedence to the names of people, places and things)</span>');?>
 		        		</td>
 		        	</tr>
+		        	<tr>
+		        		<th><label>Add tags when...</label></th>
+		        		<td class="fossura_config_td">
+		        			<?php create_radio_button('fossura_tags_trigger', 'publish', 'Publishing post <span class="description">(for the adventurous)</span>'); ?>
+		        			<?php create_radio_button('fossura_tags_trigger', 'draft', 'Saving draft <span class="description">(for the meticulous)</span>');?>
+		        		</td>
+		        	</tr>
+
 					<td><p><input type="submit" value="Save settings" class="button-primary"/></p></td>
 				</table>
 	        </form>
 <?php
 		if (isset($_POST["fossura_tag_miner_update_settings"])) {
 			$mode = $_POST['fossura_tags_mode'];
+			$trigger = $_POST['fossura_tags_trigger'];
 			update_option( 'fossura_tags_mode', $mode );
+			update_option( 'fossura_tags_trigger', $trigger);
 ?>
 
 		    <div id="fossura_settings_saved" class="updated"><strong>Configuration saved</strong></div>
@@ -48,9 +58,13 @@
 	    </style>';
 	}
 
-	function create_radio_button($name, $value, $onClickMethodName, $labelText) {
-		if ( !isset( $_POST['fossura_tags_mode'] ) ) {
+	function create_radio_button($name, $value, $labelText) {
+		if ( NULL == get_option( 'fossura_tags_mode' )  ) {
 			update_option('fossura_tags_mode', 'classic');
+		}
+		
+		if ( NULL == get_option( 'fossura_tags_trigger' ) ) {			
+			update_option('fossura_tags_trigger', 'publish');
 		}
 
 		$checked = '';
@@ -67,9 +81,22 @@
 				}
 			}
 		}
+
+		if ( 'fossura_tags_trigger' == $name ) {
+			if ( isset($_POST['fossura_tags_trigger'] ) ) {
+						if ( $_POST['fossura_tags_trigger'] == $value ) {
+							$checked = 'checked="checked"';
+						}
+			} elseif( !isset( $_POST['fossura_tags_trigger'] ) ) {
+				$saved_mode = get_option( 'fossura_tags_trigger' );
+				if ( $saved_mode == $value ) {
+					$checked = 'checked="checked"';
+				}
+			}
+		}
 		
 		echo '<p>';
-		echo '<input onClick="'. $onClickMethodName .'();" type="radio" name="'. $name .'" value="'. $value .'"'. $checked .' /><label>'. '&nbsp;&nbsp;' . $labelText .'</label>';
+		echo '<input type="radio" name="'. $name .'" value="'. $value .'"'. $checked .' /><label>'. '&nbsp;&nbsp;' . $labelText .'</label>';
 		echo '</p>';
 	}
 ?>
