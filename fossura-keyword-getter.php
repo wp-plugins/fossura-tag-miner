@@ -1,5 +1,5 @@
 <?php
-	function fossura_get_keywords( $document ) {
+	function fossura_get_keywords( $title, $document ) {
 		
 		if ( is_null( get_option('fossura_tags_mode') ) ) {
 			$mode = 'classic'; 
@@ -8,7 +8,7 @@
 		}
 		
 		$cleandoc = strip_tags($document);
-		$api_values = fossura_get_soap_data( 'tag-miner-1.0-b26741ca-2583-4dbc-a774-a1fcc4d178aa', 'tag-miner-1.0', "void", $cleandoc, 4, $mode );			
+		$api_values = fossura_get_soap_data( 'tag-miner-1.0-b26741ca-2583-4dbc-a774-a1fcc4d178aa', 'tag-miner-1.0', $title, $cleandoc, 4, $mode );			
 		$keywords_to_return = array();
 		$keywords = $api_values -> return -> keywords;
 		

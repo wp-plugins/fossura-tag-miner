@@ -1,9 +1,9 @@
 === Fossura Tag Miner ===
 Contributors: fossura
-Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans
+Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch
 Requires at least: 2.3.0
-Tested up to: 4.0
-Stable tag: 1.0.1
+Tested up to: 4.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LAUXPCX6AL66C&lc=ZA&item_name=Fossura%20Computational%20Linguistics&item_number=fossura&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
@@ -18,28 +18,30 @@ Choose to consider all possible tags equally, or to give precedence to the names
 
 The following languages are currently supported:
 
-*	English
 *	Afrikaans 
+*	English
+* 	German
 
 == Installation ==
 = The painless way =
 
-*	Go to "Plugins" > "Add"
+*	Go to "Plugins" > "Add New"
 *	Search for "fossura tag miner"
-*	Click "Install now"
+*	Click "Install now" and wait for installation to finish
 *	Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
 = The manual way =
 
-*	Download the plugin .zip file by clicking the red download button at the top right of this page
-*	Go to "Plugins" > "Add"
-*	Select "Upload"
-*	Browse to and upload the plugin .zip file
+*	Download the plugin .zip file directly by clicking the red download button at the top right of this page, or directly  (https://wordpress.org/plugins/fossura-tag-miner/)
+*	Go to "Plugins" > "Add New"
+*	Select "Upload Plugin"
+*	Browse to and select the plugin .zip file
+* 	Click "Install Now" and wait for installation to finish 
 *	Activate the plugin
 
-A new menu ("Fossura Tag Miner") will appear in your Settings section
+A new menu ("Fossura Tag Miner") will appear in your Settings section.
 
 == Frequently Asked Questions ==
 = So how do I get the tags? =
@@ -53,8 +55,12 @@ We'd love to hear your idea! Please rate and review the plugin, and be sure to m
 
 == Changelog ==
 
-= 1.0 =
-Hello, word!
+= 1.0.2 =
+New feature: German support
+Cleaned up code.
 
 = 1.0.1 =
 New feature: add tags when saving draft
+
+= 1.0 =
+Hello, word!
