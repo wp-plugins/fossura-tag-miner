@@ -13,34 +13,34 @@
         <h2>Fossura Tag Miner settings</h2>
 	 		<form method="POST" action="">
 				<table class="form-table">
-				<input type="hidden" name="fossura_tag_miner_update_settings" value="hunne" />
+				<input type="hidden" name="fossura-tag-miner_update_settings" value="hunne" />
 					<tr valign="top">
-						<th><label>Extraction algorithm</label></th>
+						<th><label><?php _e('Extraction algorithm', 'fossura-tag-miner') ?> </label></th>
 						<td class="fossura_config_td">
-							<?php create_radio_button('fossura_tags_mode', 'classic', 'Classic <span class="description">(treat all entities equally)</span>');?>
-							<?php create_radio_button('fossura_tags_mode', 'nominal', 'Nominal <span class="description">(give precedence to the names of people, places and things)</span>');?>
+							<?php create_radio_button('fossura_tags_mode', 'classic', __('Classic <span class="description">(treat all entities equally)</span>','fossura-tag-miner'));?>
+							<?php create_radio_button('fossura_tags_mode', 'nominal', __('Nominal <span class="description">(give precedence to the names of people, places and things)</span>', 'fossura-tag-miner'));?>
 		        		</td>
 		        	</tr>
 		        	<tr>
-		        		<th><label>Add tags when...</label></th>
+		        		<th><label><?php_e('Add tags when...', 'fossura-tag-miner')?></label></th>
 		        		<td class="fossura_config_td">
-		        			<?php create_radio_button('fossura_tags_trigger', 'publish', 'Publishing post <span class="description">(for the adventurous)</span>'); ?>
-		        			<?php create_radio_button('fossura_tags_trigger', 'draft', 'Saving draft <span class="description">(for the meticulous)</span>');?>
+		        			<?php create_radio_button('fossura_tags_trigger', 'publish', __('Publishing post <span class="description">(for the adventurous)</span>)', 'fossura-tag-miner')); ?>
+		        			<?php create_radio_button('fossura_tags_trigger', 'draft', __('Saving draft <span class="description">(for the meticulous)</span>', 'fossura-tag-miner'));?>
 		        		</td>
 		        	</tr>
 
-					<td><p><input type="submit" value="Save settings" class="button-primary"/></p></td>
+					<td><p><input type="submit" value="<?php _e('Save settings', 'fossura-tag-miner')?>" class="button-primary"/></p></td>
 				</table>
 	        </form>
 <?php
-		if (isset($_POST["fossura_tag_miner_update_settings"])) {
+		if (isset($_POST["fossura-tag-miner_update_settings"])) {
 			$mode = $_POST['fossura_tags_mode'];
 			$trigger = $_POST['fossura_tags_trigger'];
 			update_option( 'fossura_tags_mode', $mode );
 			update_option( 'fossura_tags_trigger', $trigger);
 ?>
 
-		    <div id="fossura_settings_saved" class="updated"><strong>Configuration saved</strong></div>
+		    <div id="fossura_settings_saved" class="updated" style="padding:10px;"><strong><?php _e('Configuration saved', 'fossura-tag-miner')?></strong></div>
 <?php
 		}
 	}

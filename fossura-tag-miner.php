@@ -5,6 +5,8 @@
 /**
  * Plugin Name: Fossura Tag Miner
  * Plugin URI: http://fossura.co.za
+ * Text Domain: fossura-tag-miner
+ * Domain Path: /languages
  * Description: Automatically add relevant tags to your blog posts..
  * Version: 1.0.2
  * Author: Fossura Computational Linguistics
@@ -12,7 +14,7 @@
  * License: GPL2
  */
  
- /*  Copyright 2014 FOSSURA_COMPUTATIONAL_LINGUISTICS  (email : info@fossura.co.za)
+ /*  Copyright 2015 FOSSURA_COMPUTATIONAL_LINGUISTICS  (email : info@fossura.co.za)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -27,6 +29,12 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+
+add_action('plugins_loaded', 'fossura_load_textdomain');
+function fossura_load_textdomain() {
+	load_plugin_textdomain( 'fossura-tag-miner', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+}
 
 add_action( 'transition_post_status', 'fossura_set_tags', 10, 3 );
 

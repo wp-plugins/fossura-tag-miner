@@ -2,8 +2,8 @@
 Contributors: fossura
 Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch
 Requires at least: 2.3.0
-Tested up to: 4.1
-Stable tag: 1.0.2
+Tested up to: 4.2.3
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LAUXPCX6AL66C&lc=ZA&item_name=Fossura%20Computational%20Linguistics&item_number=fossura&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
@@ -25,20 +25,19 @@ The following languages are currently supported:
 == Installation ==
 = The painless way =
 
-*	Go to "Plugins" > "Add New"
+*	Go to "Plugins" > "Add"
 *	Search for "fossura tag miner"
-*	Click "Install now" and wait for installation to finish
+*	Click "Install now"
 *	Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section
 
 = The manual way =
 
-*	Download the plugin .zip file directly by clicking the red download button at the top right of this page, or directly  (https://wordpress.org/plugins/fossura-tag-miner/)
-*	Go to "Plugins" > "Add New"
-*	Select "Upload Plugin"
-*	Browse to and select the plugin .zip file
-* 	Click "Install Now" and wait for installation to finish 
+*	Download the plugin .zip file by clicking the red download button at the top right of this page
+*	Go to "Plugins" > "Add"
+*	Select "Upload"
+*	Browse to and upload the plugin .zip file
 *	Activate the plugin
 
 A new menu ("Fossura Tag Miner") will appear in your Settings section.
@@ -55,9 +54,11 @@ We'd love to hear your idea! Please rate and review the plugin, and be sure to m
 
 == Changelog ==
 
+= 1.0.3 =
+Plugin translated into Serbo-Croatian (sr_RS) by Andrijana Nikolic [Web Hosting Geeks]
+
 = 1.0.2 =
 New feature: German support
-Cleaned up code.
 
 = 1.0.1 =
 New feature: add tags when saving draft
