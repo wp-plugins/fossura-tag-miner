@@ -8,7 +8,7 @@
  * Text Domain: fossura-tag-miner
  * Domain Path: /languages
  * Description: Automatically add relevant tags to your blog posts..
- * Version: 1.0.3
+ * Version: 1.0.31
  * Author: Fossura Computational Linguistics
  * Author URI: http://fossura.co.za
  * License: GPL2
