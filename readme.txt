@@ -1,6 +1,6 @@
 === Fossura Tag Miner ===
 Contributors: fossura
-Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch
+Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch, keyword extraction, auto keywords
 Requires at least: 2.3.0
 Tested up to: 4.2.3
 Stable tag: 1.0.3

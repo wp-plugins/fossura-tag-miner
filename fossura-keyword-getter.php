@@ -21,7 +21,7 @@
 	}
 
 	function fossura_get_soap_data( $apiKey, $username, $header, $document, $analysisRequired, $mode ) {
-		$client = new SoapClient( "http://144.76.218.10/FossuraAPI?wsdl" );
+		$client = new SoapClient( "http://144.76.218.10:8080/FossuraAPI?wsdl" );
 		$params = array(
 			"apiKey" => $apiKey,
 			"username" => $username,
