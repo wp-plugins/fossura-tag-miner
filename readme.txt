@@ -1,4 +1,4 @@
-=== Fossura Tag Miner ===
+=== Tag Miner ===
 Contributors: fossura
 Tags: admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch
 Requires at least: 2.3.0
@@ -12,7 +12,7 @@ Enrich your blog posts with automatically added, relevant tags.
 
 == Description ==
 
-The Fossura Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voila!
+Tag Miner uses machine learning to extract and add the most relevant tags to your blog posts. Simply write, publish and voila!
 
 Choose to consider all possible tags equally, or to give precedence to the names of people, places and things.
 
@@ -26,11 +26,11 @@ The following languages are currently supported:
 = The painless way =
 
 *	Go to "Plugins" > "Add"
-*	Search for "fossura tag miner"
+*	Search for "tag miner"
 *	Click "Install now"
 *	Activate the plugin
 
-A new menu ("Fossura Tag Miner") will appear in your Settings section
+A new menu ("Tag Miner") will appear in your Settings section
 
 = The manual way =
 
@@ -40,11 +40,11 @@ A new menu ("Fossura Tag Miner") will appear in your Settings section
 *	Browse to and upload the plugin .zip file
 *	Activate the plugin
 
-A new menu ("Fossura Tag Miner") will appear in your Settings section.
+A new menu ("Tag Miner") will appear in your Settings section.
 
 == Frequently Asked Questions ==
 = So how do I get the tags? =
-Simply publish your post. The plugin will take care of the rest as part of the publication process.
+Simply publish or save your post. The plugin will take care of the rest as part of the publication process.
 
 = What if I don't like the tags? =
 We really hope you like them, but if you don't, you can delete the auto-generated tags or manually add different ones.
@@ -53,6 +53,9 @@ We really hope you like them, but if you don't, you can delete the auto-generate
 We'd love to hear your idea! Please rate and review the plugin, and be sure to mention it in the review text.
 
 == Changelog ==
+
+= 1.0.31 =
+Maintainance release in preparation of switchover to new API. Older versions of the plugin will no longer function on 2015-08-03.
 
 = 1.0.3 =
 Plugin translated into Serbo-Croatian (sr_RS) by Andrijana Nikolic [Web Hosting Geeks]
