@@ -57,10 +57,10 @@ We'd love to hear your idea! Please rate and review the plugin, and mention your
 == Changelog ==
 
 = 1.1.0 =
-Added ability to choose number of tags
-Added ability to include pronouns and dates in results
-New plugin activation flow
-Plugin utilises textCavate API
+* Added ability to choose number of tags
+* Added ability to include pronouns and dates in results
+* New plugin activation flow
+* Plugin utilises textCavate API
 
 = 1.0.31 =
 Maintainance release in preparation of switchover to new API. Older versions of the plugin will no longer function on 2015-08-03.
