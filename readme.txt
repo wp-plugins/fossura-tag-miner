@@ -3,7 +3,7 @@ Contributors: fossura
 Tags: textcavate, admin, tags, automatic tags, auto tags, tag miner, tag mining, tag extraction, tag generation, tags, english, afrikaans, german, deutsch
 Requires at least: 2.3.0
 Tested up to: 4.2.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,9 @@ We really hope you like them, but if you don't, you can simply delete the auto-g
 We'd love to hear your idea! Please rate and review the plugin, and mention your suggestion in the review text.
 
 == Changelog ==
+
+= 1.1.1 =
+Fixes issue where tags weren't showing for some textCavate users.
 
 = 1.1.0 =
 * Added ability to choose number of tags

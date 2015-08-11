@@ -2,11 +2,12 @@
 	defined( 'ABSPATH' ) or die( "Suka wena." );
 	include ( 'fossura-keyword-getter.php' );
 	include ( 'fossura-tag-miner-admin.php' );
+
 /**
  * Plugin Name: Tag Miner
  * Plugin URI: http://www.textcavate.com
  * Description: Automatically add relevant tags to your blog posts..
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: textCavate
  * Author URI: http://www.textcavate.com
  * Text Domain: fossura-tag-miner

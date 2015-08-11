@@ -56,7 +56,7 @@
 
 
 
-		$client = new SoapClient( "http://144.76.218.10:8080/textCavateAPI?wsdl" );
+		$client = new SoapClient( "http://api.textcavate.com/textCavateAPI?wsdl" );
 		$params = array(
 			"apiKey" => $apiKey,
 			"username" => $username,
