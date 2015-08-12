@@ -7,7 +7,7 @@
  * Plugin Name: Tag Miner
  * Plugin URI: http://www.textcavate.com
  * Description: Automatically add relevant tags to your blog posts..
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: textCavate
  * Author URI: http://www.textcavate.com
  * Text Domain: fossura-tag-miner

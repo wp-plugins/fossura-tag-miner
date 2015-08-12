@@ -16,30 +16,33 @@
 	}
 
 	$registered = get_option( 'textcavate_is_registered' );
-	
-	if ($registered == 'true') {
-	?>
-	
+
+	$url_license = 'http://www.textcavate.com/get/user/license/';
+	$url_count = 'http://www.textcavate.com/get/user/queries/monthly/';
+
+	$body = array( 
+		'username' => get_option( 'textcavate_username' )
+	);
+		
+	$request = new WP_Http;
+	$license_result = $request->request( $url_license , array( 'method' => 'POST', 'body' => $body ) );
+	$license = $license_result['body'];
+	$count_result = $request->request( $url_count , array( 'method' => 'POST', 'body' => $body ) );
+	$count = $count_result['body'];
+
+	$disabled = '';
+	$gray_style = '';
+	if ( 'free' == $license) {
+		$disabled = 'disabled="disabled"';
+		$gray_style = 'style="color: LightGray;"';
+	}
+
+
+	if ($registered == 'true' && 'deleted' <> $license) {
+	?>	
 
     <div class="wrap">
-
         <?php screen_icon('options-general'); ?>
-        <?php
-			$url = 'http://www.textcavate.com/get/user/license/';
-			$body = array( 
-				'username' => get_option( 'textcavate_username' )
-			);
-				
-			$request = new WP_Http;
-			$result = $request->request( $url , array( 'method' => 'POST', 'body' => $body ) );
-			$license = $result['body'];
-			$disabled = '';
-			$gray_style = '';
-			if ( 'free' == $license ) {
-				$disabled = 'disabled="disabled"';
-				$gray_style = 'style="color: LightGray;"';
-			}
-       	?>
         <h2><?php _e('Tag Miner settings')?></h2>
         <h3><?php _e('Basic settings')?></h3>
         <div class="fossura_settings_form" style="width: 70%; float: left; overflow: visible;">
@@ -106,11 +109,24 @@
 ?>
 	    </div>
 		<?php 
+		$month_number = date('n');
+		$month = jdmonthname ( $month_number , 1 );
 				if ( 'free' == $license ) {
 					?>
 					<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
 						<p><?php _e('You are currently using a <strong>textCavate Free plan</strong>.')?></p>
+						<p><?php _e('Monthly queries for '); echo $month . ': ' . $count . ' / 5000';?> </p>
 						<p><?php _e('To gain access to the features below, please upgrade your account at <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
+						<a a href="http://www.textcavate.com/admin/upgrade/" target="_blank" class="button button-primary"><?php _e('Upgrade')?></a>		
+					</div>
+					<?php
+				}
+				elseif ('blog' == $license){
+					?>
+					<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
+						<p><?php _e('You are currently using a <strong>textCavate Blog plan</strong>.')?></p>
+						<p><?php _e('Monthly queries for '); echo $month . ': ' . $count . ' / 15 000';?></p>
+						<p><?php _e('If you require more monthly queries, please upgrade your account at <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
 						<a a href="http://www.textcavate.com/admin/upgrade/" target="_blank" class="button button-primary"><?php _e('Upgrade')?></a>						
 					</div>
 					<?php
@@ -118,20 +134,31 @@
 				elseif ( 'business' == $license ) {
 					?>
 					<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
-					<p><?php _e('You are currently using a <strong>textCavate Business plan</strong>.')?></p>
-					<p><?php _e('To change your plan, please navigate to <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
+						<p><?php _e('You are currently using a <strong>textCavate Business plan</strong>.')?></p>
+						<p><?php _e('Monthly queries for '); echo $month . ': ' . $count . ' / 3 000 000';?> </p>
+						<p><?php _e('To change your plan, please navigate to <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
 					</div>
 					<?php
 				}
-				else {
+				elseif ('standard' == $license){
 					?>
-						<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
-						<p><?php _e('You are currently using a <strong>textCavate <?php echo $license ?> plan</strong>.')?></p>
+					<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
+						<p><?php _e('You are currently using a <strong>textCavate Standard plan</strong>.')?></p>
+						<p><?php _e('Monthly queries for '); echo $month . ': ' . $count . '/ 100 000';?> </p>
 						<p><?php _e('If you require more monthly queries, please upgrade your account at <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
 						<a a href="http://www.textcavate.com/admin/upgrade/" target="_blank" class="button button-primary"><?php _e('Upgrade')?></a>						
 					</div>
 					<?php
-
+				}
+				elseif ('premium' == $license){
+					?>
+					<div class="highlight fossura_upgrade_notify" style="width: 25%; float:right; padding: 10px;">
+						<p><?php _e('You are currently using a <strong>textCavate Premium plan</strong>.')?></p>
+						<p><?php _e('Monthly queries for '); echo $month . ': ' . $count . ' / 500 000';?> </p>
+						<p><?php _e('If you require more monthly queries, please upgrade your account at <a href="http://www.textcavate.com/admin/upgrade/" target="_blank">textcavate.com</a>')?></p>
+						<a a href="http://www.textcavate.com/admin/upgrade/" target="_blank" class="button button-primary"><?php _e('Upgrade')?></a>						
+					</div>
+					<?php
 				}
 			?>
 
@@ -141,16 +168,38 @@
 	else {
 	?>
 	<div class="wrap">
-        <h2><?php _e('Tag Miner settings')?></h2>
+		<h2><?php _e('Tag Miner settings')?></h2>
         <div class="textcavate_registration_container" style="width: 49%; float: left;">
         <h3><?php _e('Activation')?></h3>
-		<p><?php _e('To use Tag Miner, you need to register for a textCavate account. It\'s a quick and easy process, and shouldn\'t take more than a minute.')?></p>
+		
+		<?php
+		 if ( 'deleted' == $license) {
+			echo('<p class="form-invalid" style="padding:10px;">');
+			 _e('It looks like you deleted your textCavate account. To continue using Tag Miner, please register a new account and activate the plugin with your API credentials.');
+			echo('</p>');
+		 }
+		 else {
+		 	echo('<p>');
+			 _e('To use Tag Miner, you need to register for a textCavate account. It\'s a quick and easy process, and shouldn\'t take more than a minute.');
+			echo('</p>');
+		 }
+		 ?>
 		<form target="_blank" method="GET" action="http://www.textcavate.com/register/">
 			<input type="hidden" name="plugin_type" value="wordpress" />
 			<p><input type="submit" value="<?php _e('Register')?>" class="button-primary"/></p>
 		</form>
 		
-		<p><?php _e('Upon completion of the registration process, you will receive an API key. Enter this API key and your textCavate username below to activate the plugin. That\'s it :)')?></p>
+		<p>
+			<?php
+			if ( 'deleted' == $license) {
+				
+			}
+			else {
+				_e('Upon completion of the registration process, you will receive an API key. Enter this API key and your textCavate username below to activate the plugin. That\'s it :)');
+			}
+
+			 ?>
+		</p>
 		<form method="POST" action="">
 			<input type="hidden" name="textcavate_register_form" value="hunne" />
 			<p><input placeholder="<?php _e('textCavate API key')?>" type="text" name="textcavate_register_api_key" value=""/></p>
